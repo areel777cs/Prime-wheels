@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Car - FAQ & Contact</title>
+    <link rel="stylesheet" href="car.css">
+    <script src="car.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Pri<span class="blue">Me</span>wheels</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" target="_self">Home</a></li>
+                <li><a href="mustafaproject.html" target="_self">Gallery</a></li>
+                <li><a href="sarmadproject1.html" target="_self">Contacts</a></li>
+                <li><a href="project.html" target="_self">Registration</a></li> <!--shiza -->
+                <li><a href="about.html" target="_self">About</a></li>
+            </ul>
+        </nav>
+        <div class="darkmode"> 
+            <button onclick="darkmode()">Dark Mode</button>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>1. How can I rent a car?</h3>
+            <p>You can rent a car by visiting our website, choosing your desired car, and completing the booking process.</p>
+            <h3>2. What documents are required?</h3>
+            <p>You need a valid driver's license, ID card or passport, and a credit card for the deposit.</p>
+            <h3>3. Are there any age restrictions?</h3>
+            <p>Yes, the minimum age to rent a car is 21 years. Some car types may require drivers to be at least 25 years old.</p>
+            <h3>4. Can I cancel my booking?</h3>
+            <p>Yes, you can cancel your booking up to 24 hours before the scheduled pickup time without any charges.</p>
+        </section>
+
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message here" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="contact-details">
+                <h3>Prime Wheels Contact Details</h3>
+                <p><strong>Address:</strong> 1234 Elm Street, Downtown City, Country</p>
+                <p><strong>Contact Number:</strong> +1-234-567-890</p>
+                <p><strong>Email:</strong> support@primewheels.com</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Prime wheels. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for contacting us! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
